@@ -1,0 +1,19 @@
+import csv
+import os
+import pandas as pd
+import numpy as np
+import ipywidgets as widgets
+
+os.chdir('Upload Raw Data Here')
+
+file_options = os.listdir()
+file_options = [x for x in file_options if x != '.ipynb_checkpoints']
+
+files = widgets.SelectMultiple(
+    options=file_options,
+    rows=10,
+    description='Select File(s): ',
+    disabled=False
+)
+
+display(files)
